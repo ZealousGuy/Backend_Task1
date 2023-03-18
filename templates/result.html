@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches</title>
+    <style>
+        body {
+			background-color: #222;
+			color: #fff;
+            display: flex;
+            flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+        #res{
+            background-color: #414141;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			resize: vertical;
+			min-height: 100px;
+			width: 50%;
+			max-width: 100%;
+			font-family: inherit; 
+        }
+        input[type=submit] {
+			background-color: #659cdb;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+        input[type=button] {
+			background-color: #c08c48;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+        form {
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label><h3>{{result|length}} Matches Found</h3></label>
+    <div id="res">
+        {% for results in result %}
+            <p>{{results}}</p>
+        {%endfor%}
+    </div>
+    <br>
+    <form action="">
+        <input type="button" value="Change Regex" onclick="history.go(-1)"><br>
+        <input type="submit" value="Go Back to check another string" />
+    </form>
+</body>
+</html>
